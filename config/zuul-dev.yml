@@ -3,8 +3,8 @@ spring:
     name: zuul
   cloud:
     config:
-      override-none: true
-    
+      override-none: true 
+
 server:  port: 3001
   
 eureka:  client:    service-url:      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
@@ -30,4 +30,5 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 500
-  
+
+management:  endpoints:    web:      exposure:        include: hystrix.stream
